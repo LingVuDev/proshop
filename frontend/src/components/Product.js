@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
+import Rating from "./Rating";
+import './Product.css';
 
 export class Product extends Component {
   render() {
     const { product } = this.props;
     return (
+  
       <Card className="my-3 p-3 rounded">
         <a href={`/product/${product._id}`}>
           <Card.Img src={product.image} variant="top"></Card.Img>
@@ -17,10 +20,13 @@ export class Product extends Component {
           </a>
           <Card.Text as="div">
             <div className="my-3">
-              {product.rating} from {product.numReviews} reviews
+              <Rating
+                rating={product.rating}
+                text={`${product.numReviews} reviews`}
+              />
             </div>
           </Card.Text>
-          <Card.Text as="h3">{product.price}</Card.Text>
+          <h3>{product.price}</h3>
         </Card.Body>
       </Card>
     );
