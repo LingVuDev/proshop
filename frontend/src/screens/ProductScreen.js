@@ -14,9 +14,7 @@ export class ProductScreen extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    debugger;
     axios.get(`/api/products/${id}`).then(({data}) => {
-      debugger;
       this.setState({
         ...this.state,
         product: {...data},
