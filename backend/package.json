@@ -5,7 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "data:import": "node ./seeder",
+    "data:destroy": "node ./seeder -d"
   },
   "author": "Ling Vu",
   "license": "ISC",
